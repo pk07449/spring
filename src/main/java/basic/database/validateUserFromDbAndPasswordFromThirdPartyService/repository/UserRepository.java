@@ -1,6 +1,6 @@
-package basic.database.repository;
+package basic.database.validateUserFromDbAndPasswordFromThirdPartyService.repository;
 
-import basic.database.entity.User;
+import basic.database.validateUserFromDbAndPasswordFromThirdPartyService.entity.User;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Repository;
 

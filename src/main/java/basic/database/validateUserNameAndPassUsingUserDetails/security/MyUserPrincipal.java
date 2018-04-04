@@ -1,26 +1,28 @@
-package basic.database.security;
+package basic.database.validateUserNameAndPassUsingUserDetails.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 public class MyUserPrincipal extends User {
-    private basic.database.entity.User user;
     private boolean isEnabled;
 
     public MyUserPrincipal(String username, String password, Collection<GrantedAuthority> authorities) {
         super(username, password, authorities);
+        System.out.println("MyUserPrincipal.MyUserPrincipal");
     }
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        return  user.getAuthorities().stream().map(auth -> (GrantedAuthority) () -> auth).collect(Collectors.toList());
+        System.out.println("MyUserPrincipal.getAuthorities");
+        return super.getAuthorities();
     }
 
 
     public void setEnabled(boolean enabled) {
         isEnabled = enabled;
+        System.out.println("MyUserPrincipal.setEnabled");
+//        super.set(enabled);
     }
 }

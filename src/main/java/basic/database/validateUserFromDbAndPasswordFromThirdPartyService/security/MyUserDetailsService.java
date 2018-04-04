@@ -1,7 +1,7 @@
-package basic.database.security;
+package basic.database.validateUserFromDbAndPasswordFromThirdPartyService.security;
 
-import basic.database.entity.User;
-import basic.database.repository.UserRepository;
+import basic.database.validateUserFromDbAndPasswordFromThirdPartyService.entity.User;
+import basic.database.validateUserFromDbAndPasswordFromThirdPartyService.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,9 +20,10 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) {
         User user = userRepository.findByUsername(username);
+        System.out.println("MyUserDetailsService.loadUserByUsername");
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }
-        return new MyUserPrincipal(username,"password", Arrays.asList((GrantedAuthority) () -> "Admin"));
+        return new MyUserPrincipal(username,"passwords", Arrays.asList((GrantedAuthority) () -> "Admin"));
     }
 }

@@ -1,4 +1,4 @@
-package basic.database.security;
+package basic.database.validateUserFromDbAndPasswordFromThirdPartyService.security;
  
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

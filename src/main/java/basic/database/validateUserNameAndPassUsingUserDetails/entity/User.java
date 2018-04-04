@@ -1,4 +1,4 @@
-package basic.database.entity;
+package basic.database.validateUserNameAndPassUsingUserDetails.entity;
 
 import java.util.List;
 

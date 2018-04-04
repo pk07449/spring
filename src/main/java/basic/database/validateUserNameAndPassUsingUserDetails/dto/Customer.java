@@ -1,4 +1,4 @@
-package basic.database.dto;
+package basic.database.validateUserNameAndPassUsingUserDetails.dto;
 
 /**
  * Created by pankaj on 10/28/2017.

@@ -1,20 +1,15 @@
-package basic.database.security;
+package basic.database.validateUserFromDbAndPasswordFromThirdPartyService.security;
 
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.ArrayList;
 
 /**
  * Created by pankaj on 10/29/2017.
  */
 public class CustomeAutenticationCheck extends DaoAuthenticationProvider{
-    @Override
+ /*   @Override
     protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-        if("epassword".equals(authentication.getCredentials())){
+        System.out.println("CustomeAutenticationCheck.additionalAuthenticationChecks");
+        if("password".equals(authentication.getCredentials())){
             ((MyUserPrincipal) userDetails).setEnabled(true);
         }
     }
@@ -25,7 +20,8 @@ public class CustomeAutenticationCheck extends DaoAuthenticationProvider{
                 authentication.getPrincipal(), authentication.getCredentials(),
                 new ArrayList<>());
         result.setDetails(authentication.getDetails());
+        System.out.println("CustomeAutenticationCheck.authenticate");
 //        authentication.setAuthenticated(true);
         return result;
-    }
+    }*/
 }

@@ -1,4 +1,4 @@
-package basic.database.security;
+package basic.database.validateUserFromDbAndPasswordFromThirdPartyService.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        System.out.println("WebSecurityConfig.configure");
         http.csrf().disable().authorizeRequests()
                 .anyRequest().authenticated()
                 .and().httpBasic();
@@ -27,6 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
+        System.out.println("WebSecurityConfig.authenticationProvider");
 //        CustomeAutenticationCheck customeAutenticationCheck = new CustomeAutenticationCheck();
 //        customeAutenticationCheck.setUserDetailsService(userDetailsService);
 //        return customeAutenticationCheck;
@@ -45,6 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        System.out.println("WebSecurityConfig.configureGlobal");
         auth.authenticationProvider(authenticationProvider());
         auth.userDetailsService(userDetailsService);
 
