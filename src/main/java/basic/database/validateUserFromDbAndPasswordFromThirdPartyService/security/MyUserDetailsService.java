@@ -24,6 +24,6 @@ public class MyUserDetailsService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException(username);
         }
-        return new MyUserPrincipal(username,"passwords", Arrays.asList((GrantedAuthority) () -> "Admin"));
+        return new MyUserPrincipal(username,"abc", Arrays.asList((GrantedAuthority) () -> "Admin"));
     }
 }

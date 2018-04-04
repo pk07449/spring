@@ -1,6 +1,6 @@
-package basic.database.validateUserNameAndPassUsingUserDetails.repository;
+package basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.repository;
 
-import basic.database.validateUserNameAndPassUsingUserDetails.entity.User;
+import basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.entity.User;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Repository;
 

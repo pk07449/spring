@@ -1,4 +1,4 @@
-package basic.database.validateUserNameAndPassUsingUserDetails.dto;
+package basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.dto;
 
 /**
  * Created by pankaj on 10/28/2017.

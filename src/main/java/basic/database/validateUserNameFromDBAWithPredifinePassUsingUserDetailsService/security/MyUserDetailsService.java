@@ -1,7 +1,7 @@
-package basic.database.validateUserNameAndPassUsingUserDetails.security;
+package basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.security;
 
-import basic.database.validateUserNameAndPassUsingUserDetails.entity.User;
-import basic.database.validateUserNameAndPassUsingUserDetails.repository.UserRepository;
+import basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.entity.User;
+import basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

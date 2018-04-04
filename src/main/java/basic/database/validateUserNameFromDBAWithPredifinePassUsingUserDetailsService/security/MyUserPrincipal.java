@@ -1,4 +1,4 @@
-package basic.database.validateUserNameAndPassUsingUserDetails.security;
+package basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;

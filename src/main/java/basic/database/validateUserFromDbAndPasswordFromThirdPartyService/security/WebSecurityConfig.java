@@ -13,11 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  */
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-
     @Autowired
     private MyUserDetailsService userDetailsService;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println("WebSecurityConfig.configure");
@@ -27,32 +24,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
+    @Autowired
     public DaoAuthenticationProvider authenticationProvider() {
-        System.out.println("WebSecurityConfig.authenticationProvider");
-//        CustomeAutenticationCheck customeAutenticationCheck = new CustomeAutenticationCheck();
-//        customeAutenticationCheck.setUserDetailsService(userDetailsService);
-//        return customeAutenticationCheck;
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
-//        daoAuthenticationProvider.setPasswordEncoder(encoder());
-        return  daoAuthenticationProvider;
-
+        CustomDaoPasswordAuthentication customDaoPasswordAuthentication = new CustomDaoPasswordAuthentication();
+        customDaoPasswordAuthentication.setUserDetailsService(userDetailsService);
+        return customDaoPasswordAuthentication;
     }
-
-//    @Bean
-//    public PasswordEncoder encoder() {
-//        return new BCryptPasswordEncoder(11);
-//    }
-
 
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        System.out.println("WebSecurityConfig.configureGlobal");
-        auth.authenticationProvider(authenticationProvider());
-        auth.userDetailsService(userDetailsService);
-
+    public void configureGlobal(DaoAuthenticationProvider daoAuthenticationProvider,
+                                AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(daoAuthenticationProvider);
     }
-
-    // create two users, admin and user
-
 }

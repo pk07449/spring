@@ -1,4 +1,4 @@
-package basic.database.validateUserNameAndPassUsingUserDetails.entity;
+package basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.entity;
 
 import java.util.List;
 

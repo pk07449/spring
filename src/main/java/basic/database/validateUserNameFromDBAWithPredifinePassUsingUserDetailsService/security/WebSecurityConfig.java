@@ -1,4 +1,4 @@
-package basic.database.validateUserNameAndPassUsingUserDetails.security;
+package basic.database.validateUserNameFromDBAWithPredifinePassUsingUserDetailsService.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
