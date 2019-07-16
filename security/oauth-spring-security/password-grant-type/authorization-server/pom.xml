@@ -9,7 +9,7 @@
 	<name>authorization-server</name>
 
 	<parent>
-		<groupId>com.gwidgets.examples</groupId>
+		<groupId>com.pankaj.examples</groupId>
 		<artifactId>oauth2-example</artifactId>
 		<version>0.1</version>
 	</parent>
