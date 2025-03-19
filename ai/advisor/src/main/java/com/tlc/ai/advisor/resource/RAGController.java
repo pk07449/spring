@@ -20,14 +20,13 @@ import java.util.stream.Collectors;
 
 @RestController
 class RAGController {
-    private final ChatClient chatClient;
-    private final VectorStore vectorStore;
+    private  ChatClient chatClient;
+    private  VectorStore vectorStore;
 
-    RAGController(ChatClient.Builder chatClientBuilder, VectorStore vectorStore) {
+
+    public RAGController(ChatClient.Builder chatClientBuilder) {
         this.chatClient = chatClientBuilder.build();
-        this.vectorStore = vectorStore;
     }
-    
     // Assume that we have already read the documents from files containing information about people 
     // and stored them in the VectorStore as described in the previous section.
     

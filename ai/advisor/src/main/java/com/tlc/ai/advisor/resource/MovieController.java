@@ -12,12 +12,12 @@ import java.util.List;
 @RestController
 class MovieController {
 
-    @Autowired
+//    @Autowired
     private ChatClient chatClient;
 
-//    public MovieController(ChatClient.Builder chatClientBuilder) {
-//        this.chatClient = chatClientBuilder.build();
-//    }
+    public MovieController(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
+    }
 
     @GetMapping("/ai")
     String generation(String userInput) {
